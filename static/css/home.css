@@ -65,13 +65,13 @@ body{
         flex-direction: column;
         align-items: end;
         justify-content: start;
+
     }
 
     .right img {width: 100%}
 
     .location {
         border: 2px solid purple;
-
         width: 60%;
     }
 

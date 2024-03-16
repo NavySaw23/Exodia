@@ -1,0 +1,28 @@
+{
+  "articles": [
+    {
+      "title": "Strong Earthquake Hits California",
+      "paragraph": "A powerful earthquake measuring 7.5 magnitude struck San Francisco, causing widespread damage and triggering fears of tsunamis along the coast."
+    },
+    {
+      "title": "Avalanche in Swiss Alps",
+      "paragraph": "An avalanche swept through a popular ski resort in the Swiss Alps, burying several chalets under snow. Rescue operations are underway to locate missing individuals."
+    },
+    {
+      "title": "Tsunami Warning Issued for Japan",
+      "paragraph": "A tsunami warning has been issued for coastal regions of Japan following a massive undersea earthquake with a magnitude of 8.0."
+    },
+    {
+      "title": "Cyclone Devastates Bangladesh",
+      "paragraph": "A powerful cyclone with winds reaching 250 km/h slammed into Bangladesh, leaving a trail of destruction and forcing thousands to seek shelter in evacuation centers."
+    },
+    {
+      "title": "COVID-19 Pandemic Update",
+      "paragraph": "The COVID-19 pandemic continues to wreak havoc globally, with new variants emerging and vaccination efforts underway. Authorities are urging people to follow safety protocols and get vaccinated."
+    },
+    {
+      "title": "Floods Swamp Mississippi River Basin",
+      "paragraph": "Heavy rains have caused the Mississippi River to overflow, flooding nearby towns and farmlands. Emergency shelters have been set up for displaced residents."
+    }
+  ]
+}
