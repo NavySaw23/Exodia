@@ -20,15 +20,18 @@
     </div>
 
     <div class="hotspots">
-      <span class="hs_title"> Major Hot-spots </span>
+      <span class="hs_title">Major Hot-spots</span>
       <table class="hs_cities">
-        <tr class="Place1">
-            <td class="Location">{{list.location1}}</td>
-            <td class="Disaster">{{list.disaster1}}</td>
-            <td class="Intensity_local ui{{list.UniScale1}}">{{list.scale1}}</td>
-        </tr>
+          {% for hotspot in list %}
+          <tr>
+              <td class="Location">{{ hotspot.location }}</td>
+              <td class="Disaster">{{ hotspot.disaster }}</td>
+              <td class="Intensity_local ui{{ hotspot.UniScale }}">{{ hotspot.scale }}</td>
+          </tr>
+          {% endfor %}
       </table>
-    </div>
+  </div>
+  
   </div>
 </div>
 

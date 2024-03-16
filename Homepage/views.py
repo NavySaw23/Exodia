@@ -130,7 +130,7 @@ def flood_scale(water_level):
 # Function to extract disaster information from a paragraph
 def extract_disaster_info(title, paragraph):
     disaster_types = ["earthquake", "avalanche", "tsunami", "cyclone", "pandemics", "floods"]
-    location_regex = r'in\s*([^\.,]+)'
+    location_regex = r'in \s*([^\.,]+)'
     intensity_regex = r'(\d+(\.\d+)?)\s*(magnitude|richter)?'
     water_level_regex = r'(\d+(\.\d+)?)\s*(cm|meters|meter|m)'
     shelter_keywords = ["shelter", "evacuation", "rescue"]
@@ -205,18 +205,28 @@ result = process_news_articles(json_file)
 for info in result:
     print(info)
 
+
+
 def create_list():
-  result = process_news_articles(json_file)
-  class Spots:
-      def __init__(self):
-          for info in result:
-            self.disaster1 = info['name']
-            self.location1 = info['location']
-            self.scale1 = info['scale (original)']
-            self.UniScale = info['scale (common)']
-            self.shelterlist = info['shelter']
-  spots = Spots()
-  return spots
+    result = process_news_articles(json_file)
+    class Spots:
+        def __init__(self):
+            self.spots = []
+            for info in result:
+                self.spots.append({
+                    'disaster': info['name'],
+                    'location': info['location'],
+                    'scale': info['scale (original)'],
+                    'UniScale': info['scale (common)'],
+                    'shelterlist': info['shelter']
+                })
+
+        def __iter__(self):
+            return iter(self.spots)
+
+    spots = Spots()
+    return spots
+
 
 
 
