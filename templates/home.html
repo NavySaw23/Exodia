@@ -1,0 +1,37 @@
+{% extends 'base.html' %} {% load static %} {%block css%}
+<link rel="stylesheet" href="{%static 'css/home.css' %}" />
+{%endblock css%} {%block body%}
+
+<div class="desk">
+  <div class="left">
+    <div class="bg">
+      <img src="{%static 'svgs/desk_bg.svg'%}" alt="" />
+    </div>
+  </div>
+  <div class="right">
+    <img src="{%static 'svgs/desk_title.svg'%}" alt="" />
+
+    <div class="location">
+      <div class="loc_bg">
+        <img src="{%static 'svgs/desk_location.svg'%}" alt="" />
+      </div>
+      <div class="loc_city">{{city}}</div>
+      <div class="loc_country">{{country}}</div>
+    </div>
+
+    <div class="hotspots">
+      <span class="hs_title"> Major Hot-spots </span>
+      <table class="hs_cities">
+        <tr class="Place1">
+            <td class="Location">{{list.location1}}</td>
+            <td class="Disaster">{{list.disaster1}}</td>
+            <td class="Intensity_local ui{{list.UniScale1}}">{{list.scale1}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="mob"></div>
+
+{%endblock body%}

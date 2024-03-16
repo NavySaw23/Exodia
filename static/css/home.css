@@ -1,0 +1,135 @@
+/* Color codes for disaster levels */
+.ui0{
+    opacity: 0;
+}
+.ui1{
+    color: green;
+}
+.ui2{
+    color: yellowgreen;
+}
+.ui3{
+    color: yellow;
+}
+.ui4{
+    color: orange;
+}
+.ui5{
+    color: red;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #262525;
+    display: flex;
+    font-family: "Palanquin Dark", sans-serif;
+    font-style: normal;
+    color: white;
+}
+
+/* Desktop */
+@media only screen and (min-width: 992px){
+    .mob{display: none;}
+
+    .desk{
+        border: 2px solid white;
+        width: 100%;
+        display: flex;
+    }
+
+    .left{
+        width: 45%;
+    }
+
+    .bg{
+        border: 2px solid green;
+        width: 100%;
+    }
+    
+    .bg img{
+        width: 100%;
+    }
+
+
+    .right {
+        border: 2px solid red;
+
+        width: 55%;
+        height: 25%;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        justify-content: start;
+    }
+
+    .right img {width: 100%}
+
+    .location {
+        border: 2px solid purple;
+
+        width: 60%;
+    }
+
+    .loc_bg{
+        position: relative;
+    }
+    .loc_city{
+        border: 2px solid lime;
+
+        position: relative;
+        margin-left: 40%;
+        margin-top: -17%;
+        padding: 0 10px 0 0;
+
+        color: white;
+        font-size: 2vw;
+        text-align: end;
+    }
+    .loc_country{
+        border: 2px solid lime;
+
+        position: relative;
+        margin-left: 40%;
+        margin-top: -4%;
+        padding: 0 10px 0 0;
+
+        font-size: 1.5vw;
+        text-align: end;
+    }
+
+    .hotspots{
+        border: 2px solid yellow;
+        margin: 8% 0% 0% 0%;
+        position: relative;
+        width: 100%;
+    }
+    
+    .hs_title{
+        font-size: 1.8vw;
+    }
+
+    .hs_cities{
+        width: 70%;
+        margin: 0 0 0 5%;
+        border: 2px solid orange;
+
+    }
+
+}
+
+/* tablet */
+@media only screen and (min-width: 768px) and (max-width: 992px){
+    .mob{display: none;}
+
+}
+
+/* mobile */
+@media only screen and (max-width: 767px){
+    .desk{display: none;}
+
+}
