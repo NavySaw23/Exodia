@@ -24,7 +24,7 @@ def scrape_and_save(url, output_file):
                 paragraph = paragraph_elem.text if paragraph_elem else "No description available"
 
                 # Check if the title contains specific words
-                keywords = ["earthquake", "forest fire", "tsunami", "cyclone", "pandemic", "epidemic", "drought", "flood"]
+                keywords = ["earthquake", "magnitude", "forest fire", "tsunami", "cyclone", "pandemic", "epidemic", "drought", "flood"]
                 for keyword in keywords:
                     if keyword.lower() in title.lower():
                         articles_list.append({"title": title, "paragraph": paragraph})
@@ -59,8 +59,10 @@ def earthquake_scale(magnitude):
         return 3  # Significant
     elif magnitude < 6:
         return 4  # Severe
+    elif magnitude < 8:
+        return 5  # extreme
     else:
-        return 5  # Extreme
+        return 0  
 
 # Function to map avalanche size to common scale
 def avalanche_scale(size):
@@ -73,7 +75,7 @@ def avalanche_scale(size):
     elif size == "very large":
         return 4  # Severe
     else:
-        return 5  # Extreme
+        return 0  # Extreme
 
 # Function to map tsunami magnitude scale to common scale
 def tsunami_scale(magnitude):
@@ -85,8 +87,10 @@ def tsunami_scale(magnitude):
         return 3  # Significant
     elif magnitude < 6:
         return 4  # Severe
-    else:
+    elif magnitude < 7:
         return 5  # Extreme
+    else:
+        return 0
 
 # Function to map cyclone category to common scale
 def cyclone_scale(category):
@@ -98,8 +102,10 @@ def cyclone_scale(category):
         return 3  # Significant
     elif category == 4:
         return 4  # Severe
-    else:
+    elif category == 5:
         return 5  # Extreme
+    else:
+        return 0
 
 # Function to map pandemic outbreak scale to common scale
 def pandemic_scale(outbreak):
@@ -112,7 +118,7 @@ def pandemic_scale(outbreak):
     elif outbreak == "international":
         return 4  # Severe
     else:
-        return 5  # Extreme
+        return 0  # Extreme
 
 # Function to map flood water level to common scale
 def flood_scale(water_level):
@@ -125,7 +131,7 @@ def flood_scale(water_level):
     elif water_level < 40:
         return 4  # Severe
     else:
-        return 5  # Extreme
+        return 0  # Extreme
 
 # Function to extract disaster information from a paragraph
 def extract_disaster_info(title, paragraph):
@@ -145,7 +151,7 @@ def extract_disaster_info(title, paragraph):
 
     # Find location
     location_match = re.search(location_regex, paragraph, re.IGNORECASE)
-    location = location_match.group(1).strip() if location_match else "Unknown"
+    location = location_match.group(1).strip() if location_match else ""
 
     # Find intensity or water level based on disaster type
     if disaster_name == "Floods":
@@ -243,7 +249,7 @@ def home_view(request, *args, **kwargs):
     hotspots = create_list()
 
     context = {
-        'location' : city,
+        'city' : city,
         'country' : country,
         'list' : hotspots,
     }

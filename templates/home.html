@@ -5,7 +5,7 @@
 <div class="desk">
   <div class="left">
     <div class="bg">
-      <img src="{%static 'svgs/desk_bg.svg'%}" alt="" />
+      <img src="{%static 'svgs/desk_bg2.svg'%}" alt="" />
     </div>
   </div>
   <div class="right">
@@ -22,19 +22,37 @@
     <div class="hotspots">
       <span class="hs_title">Major Hot-spots</span>
       <table class="hs_cities">
-          {% for hotspot in list %}
-          <tr>
-              <td class="Location">{{ hotspot.location }}</td>
-              <td class="Disaster">{{ hotspot.disaster }}</td>
-              <td class="Intensity_local ui{{ hotspot.UniScale }}">{{ hotspot.scale }}</td>
-          </tr>
-          {% endfor %}
+        {% for hotspot in list %} {% if forloop.counter <= 3 %}
+        <tr>
+          <td class="Location">{{ hotspot.location }}</td>
+          <td class="Disaster">{{ hotspot.disaster }}</td>
+          <td class="Intensity_local ui{{ hotspot.UniScale }}">
+            {{ hotspot.scale }}
+          </td>
+        </tr>
+        {% endif %} {% endfor %}
       </table>
-  </div>
-  
+    </div>
+
+    <div class="res">
+      <div class="res_bg">
+        <img src="{%static 'svgs/resBox.svg'%}" alt="" />
+      </div>
+      <div class="res_head">Resources</div>
+      <div class="res_body">
+        <p class="res_subhead">
+          Precautions during Earthquake
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero odio distinctio dicta suscipit tenetur facere omnis quidem aliquid dignissimos commodi.
+        </p>
+        </div>
+    </div>
   </div>
 </div>
 
 <div class="mob"></div>
+
+<script></script>
 
 {%endblock body%}
