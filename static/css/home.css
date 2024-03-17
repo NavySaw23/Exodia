@@ -24,6 +24,8 @@
     padding: 0;
 }
 
+canvas { display: block; }
+
 body{
     background-color: #262525;
     display: flex;
@@ -51,10 +53,21 @@ body{
         width: 100%;
     }
     
-    .bg img{
+    .bg .back{
         width: 100%;
     }
 
+    .ind{
+        /* border: 2px solid lime; */
+        display: block;
+        top:18%;
+        left: 8%;
+        position: absolute;
+        z-index: 999;
+        max-width: 70%;
+        max-height: 70%;
+
+    }
 
     .right {
         /* border: 2px solid red; */
@@ -159,9 +172,19 @@ body{
         text-align: end;
 
         .res_subhead{
-            font-size: 2vh;
+            font-size: 1.5vw;
         }
     }
+    
+    
+
+    /* canvas { 
+        border: 2px solid lime;
+
+        display: block;
+        position: absolute;
+        z-index: 9999; 
+    } */
 }
 
 
